@@ -73,13 +73,17 @@
         <ul
           id="category-list"
           class="nav nav-pills d-flex justify-content-between"
-        ></ul>
+        >
+          <li class="nav-item nav-list-items">
+            <a class="nav-link active" aria-current="page">Home</a>
+          </li>
+        </ul>
       </section>
       <!-- catagory list items end -->
 
       <section>
         <!-- number of items  -->
-        <div id="items-found" class="my-5 bg-white p-3 rounded-2">
+        <div id="items-found" class="my-5 bg-white p-3 rounded-2 d-none">
           <h2 class="fs-5">4 items found for category Entertainment</h2>
         </div>
 
@@ -105,6 +109,45 @@
       <!-- single category card start -->
       <section id="single-category-info" class="my-5"></section>
       <!-- single category card end -->
+
+      <!-- single details category card information start -->
+      <section>
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="categoryDetailsModal"
+          tabindex="-1"
+          aria-labelledby="categoryDetailsModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="categoryDetailsModalLabel">
+                  Modal title
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div id="category-details-info" class="modal-body"></div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- single details category card information end -->
     </main>
 
     <!-- javascript file link -->

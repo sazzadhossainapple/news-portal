@@ -41,6 +41,12 @@ const loadSingleCategory = async (id) => {
 
 const displaySingleCategory = (singleCategorys) => {
   console.log(singleCategorys);
+  const numberOfCategory = document.getElementById("items-found");
+  if (singleCategorys.length === null) {
+    numberOfCategory.classList.add("d-none");
+  } else {
+    numberOfCategory.classList.remove("d-none");
+  }
   const singleCategoryInfo = document.getElementById("single-category-info");
   singleCategoryInfo.textContent = "";
 
@@ -49,8 +55,10 @@ const displaySingleCategory = (singleCategorys) => {
 
   // display single category
   singleCategorys.forEach((singleCategory) => {
-    const { thumbnail_url, title, details, author, total_view } =
+    const { thumbnail_url, title, details, author, total_view, _id } =
       singleCategory;
+    // console.log(typeof _id);
+
     const divSingleCategory = document.createElement("div");
     divSingleCategory.innerHTML = `
     <div class="card mb-3 p-3">
@@ -92,7 +100,8 @@ const displaySingleCategory = (singleCategorys) => {
                   <i class="bi bi-star"></i>
                 </div>
                 <div class="fs-1 fw-bold d-flex align-items-center">
-                  <i class="bi bi-arrow-right-short"></i>
+                  <i onclick="loadSingleCategoryDetails('${_id}')" class="bi bi-arrow-right-short btn-icon" data-bs-toggle="modal"
+                  data-bs-target="#categoryDetailsModal"></i>
                 </div>
               </div>
               </div>
@@ -103,6 +112,63 @@ const displaySingleCategory = (singleCategorys) => {
     `;
     singleCategoryInfo.appendChild(divSingleCategory);
   });
+};
+
+// single category news details
+const loadSingleCategoryDetails = async (id) => {
+  const url = `https://openapi.programming-hero.com/api/news/${id}`;
+
+  try {
+    const res = await fetch(url);
+    const data = await res.json();
+    displaySingleCategoryDetails(data.data[0]);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const displaySingleCategoryDetails = (singleDetails) => {
+  console.log(singleDetails);
+
+  const { title, details, image_url, others_info, rating, total_view, author } =
+    singleDetails;
+
+  const newsTitle = document.getElementById("categoryDetailsModalLabel");
+  newsTitle.innerText = title;
+
+  const detailsCategoryInfo = document.getElementById("category-details-info");
+  detailsCategoryInfo.textContent = "";
+  detailsCategoryInfo.innerHTML = `
+    <img class="img-fluid" src="${image_url}" alt="">
+      <div>
+      <p class="card-text text-muted lh-lg my-3">${details}</p>
+      <div class="d-flex justify-content-between align-items-center">
+      <div>
+        <p><span class="fw-bold fs-6">Rating:</span> ${rating.number}, ${
+    rating.badge
+  }.</p>
+      </div>
+      <div class="d-flex align-items-center gap-3">
+        <p class="fs-4 fw-bold"><i class="bi bi-eye"></i></p>
+        <p class="fw-bold">
+          ${total_view ? total_view : "View Not Found"}<span>M</span>
+        </p>
+      </div>
+    </div>
+    <div class="d-flex gap-3 justify-content-center">
+      <div>
+        <img class="rounded-circle author-img" src="${author.img}" alt="" />
+      </div>
+      <div>
+        <h3 class="fw-bold fs-6 mb-1">${
+          author.name ? author.name : " Name Not Found"
+        }</h3>
+        <p class="text-muted">${author.published_date}</p>
+      </div>
+      </div>
+     </div>
+
+  `;
 };
 
 loadAllCategory();
