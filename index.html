@@ -34,6 +34,7 @@
   </head>
   <body class="bg-light">
     <header>
+      <!-- nav start -->
       <nav class="navbar navbar-expand-lg container">
         <div class="container-fluid mt-2">
           <a class="navbar-brand fs-2" href="#">The News Glory</a>
@@ -65,27 +66,60 @@
           </div>
         </div>
       </nav>
-      <hr class="mx-5" />
+      <!-- nan end -->
+      <hr class="mx-lg-5 mx-md-3 mx-sm-2 mx-2" />
     </header>
     <main class="container">
       <!-- catagory list items start -->
       <section class="my-4">
-        <ul
+        <!-- <ul
           id="category-list"
           class="nav nav-pills d-flex justify-content-between"
         >
           <li class="nav-item nav-list-items">
             <a class="nav-link active" aria-current="page">Home</a>
           </li>
-        </ul>
+        </ul> -->
+
+        <nav class="navbar navbar-expand-lg">
+          <div class="container-fluid">
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNavDropdown"
+              aria-controls="navbarNavDropdown"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul
+                id="category-list"
+                class="nav nav-pills d-flex justify-content-between"
+              ></ul>
+            </div>
+          </div>
+        </nav>
       </section>
       <!-- catagory list items end -->
 
+      <!-- loader -->
+      <section id="loader" class="d-none">
+        <div
+          style="height: 400px"
+          class="d-flex justify-content-center align-items-center"
+        >
+          <div class="spinner-border text-success" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      </section>
+
       <section>
         <!-- number of items  -->
-        <div id="items-found" class="my-5 bg-white p-3 rounded-2 d-none">
-          <h2 class="fs-5">4 items found for category Entertainment</h2>
-        </div>
+        <div id="items-found" class="my-5 bg-white p-3 rounded-2 d-none"></div>
 
         <!-- sort by view  -->
         <div class="d-flex justify-content-between">

@@ -28,6 +28,8 @@ const displayAllCategory = (categorys) => {
 
 // single Category items
 const loadSingleCategory = async (id) => {
+  // strat spinner loader
+  toggleSpinner(true);
   const url = `https://openapi.programming-hero.com/api/news/category/${0}${id}`;
 
   try {
@@ -70,9 +72,9 @@ const displaySingleCategory = (singleCategorys) => {
               <div class="card-body">
                 <h5 class="card-title fw-bold mb-3">${title}</h5>
                 <p class="card-text text-muted lh-lg mb-3">${
-                  details.length > 400 ? details.slice(0, 400) + "..." : details
+                  details.length > 300 ? details.slice(0, 300) + "..." : details
                 }</p>
-                <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex justify-content-between align-items-center flex-lg-row flex-sm-column flex-column">
                 <div class="d-flex gap-3">
                   <div>
                     <img class="rounded-circle author-img" src="${
@@ -83,14 +85,18 @@ const displaySingleCategory = (singleCategorys) => {
                     <h3 class="fw-bold fs-6 mb-1">${
                       author.name ? author.name : " Name Not Found"
                     }</h3>
-                    <p class="text-muted">${author.published_date}</p>
+                    <p class="text-muted">${
+                      author.published_date
+                        ? author.published_date
+                        : "Date Not Found"
+                    }</p>
                   </div>
                 </div>
                 <div class="d-flex align-items-center gap-3">
                   <p class="fs-4 fw-bold"><i class="bi bi-eye"></i></p>
                   <p class="fs-4 fw-bold">${
-                    total_view ? total_view : "View Not Found"
-                  }<span>M</span></p>
+                    total_view ? total_view + "M" : "View Not Found"
+                  }</p>
                 </div>
                 <div class="fs-4 fw-bold d-flex align-items-center">
                   <i class="bi bi-star-half"></i>
@@ -112,6 +118,19 @@ const displaySingleCategory = (singleCategorys) => {
     `;
     singleCategoryInfo.appendChild(divSingleCategory);
   });
+
+  // stop spinner or loader
+  toggleSpinner(false);
+};
+
+//spinner
+const toggleSpinner = (isLoading) => {
+  const loaderSection = document.getElementById("loader");
+  if (isLoading) {
+    loaderSection.classList.remove("d-none");
+  } else {
+    loaderSection.classList.add("d-none");
+  }
 };
 
 // single category news details
@@ -163,7 +182,9 @@ const displaySingleCategoryDetails = (singleDetails) => {
         <h3 class="fw-bold fs-6 mb-1">${
           author.name ? author.name : " Name Not Found"
         }</h3>
-        <p class="text-muted">${author.published_date}</p>
+        <p class="text-muted">${
+          author.published_date ? author.published_date : "Date Not Found"
+        }</p>
       </div>
       </div>
      </div>
