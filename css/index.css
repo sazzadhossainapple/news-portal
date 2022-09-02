@@ -1,3 +1,8 @@
 * {
   font-family: "Roboto", sans-serif;
 }
+
+/* category items css */
+.nav-list-items {
+  cursor: pointer;
+}
