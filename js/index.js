@@ -39,7 +39,6 @@ const loadSingleCategory = async (id) => {
 };
 
 const displaySingleCategory = (singleCategorys) => {
-  console.log(singleCategorys);
   const numberOfCategory = document.getElementById("items-found");
   numberOfCategory.textContent = "";
   const sortViewCategory = document.getElementById("sort-view-category");
@@ -158,8 +157,6 @@ const loadSingleCategoryDetails = async (id) => {
 };
 
 const displaySingleCategoryDetails = (singleDetails) => {
-  console.log(singleDetails);
-
   const { title, details, image_url, others_info, rating, total_view, author } =
     singleDetails;
 
