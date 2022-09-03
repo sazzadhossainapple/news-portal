@@ -85,7 +85,7 @@ const displaySingleCategory = (singleCategorys) => {
                   details.length > 300 ? details.slice(0, 300) + "..." : details
                 }</p>
                 <div class="d-flex align-items-center justify-content-between flex-lg-row flex-sm-column flex-column">
-                <div class="d-flex gap-3 mt-3">
+                <div class="d-flex gap-3 mt-3 flex-lg-row flex-md-row flex-sm-column flex-column text-lg-start text-md-start text-sm-center text-center">
                   <div>
                     <img class="rounded-circle author-img" src="${
                       author.img
@@ -183,7 +183,15 @@ const displaySingleCategoryDetails = (singleDetails) => {
         </p>
       </div>
     </div>
-    <div class="d-flex gap-3 justify-content-lg-start justify-content-md-start justify-content-sm-center justify-content-center">
+    <div class="d-flex flex-lg-row flex-md-row flex-sm-column flex-column justify-content-lg-between justify-content-md-between justify-content-sm-center justify-content-center align-items-center">
+        <p><span class="fw-bold fs-6">Todays Pick: </span>${
+          others_info.is_todays_pick === true ? "Yes" : "No"
+        }</p>        
+        <p><span class="fw-bold fs-6">Trending: </span>${
+          others_info.is_trending === true ? "Yes" : "No"
+        }</p>        
+    </div>
+    <div class="d-flex gap-3 justify-content-lg-start justify-content-md-start justify-content-sm-center justify-content-center flex-lg-row flex-md-row flex-sm-column flex-column text-lg-start text-md-start text-sm-center text-center">
       <div>
         <img class="rounded-circle author-img" src="${author.img}" alt="" />
       </div>
