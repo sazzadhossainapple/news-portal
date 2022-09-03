@@ -50,7 +50,7 @@ const displaySingleCategory = (singleCategorys) => {
   // number of category found or not
   if (singleCategorys.length === 0) {
     numberOfCategory.classList.remove("d-none");
-    spanCategoryNumber.innerText = `items not found for category 
+    spanCategoryNumber.innerText = `News not found for category 
     `;
     numberOfCategory.appendChild(spanCategoryNumber);
   } else {
@@ -93,19 +93,19 @@ const displaySingleCategory = (singleCategorys) => {
                   </div>
                   <div>
                     <h3 class="fw-bold fs-6 mb-1">${
-                      author.name ? author.name : " Name Not Found"
+                      author.name ? author.name : "No data found."
                     }</h3>
                     <p class="text-muted">${
                       author.published_date
                         ? author.published_date
-                        : "Date Not Found"
+                        : "No data found."
                     }</p>
                   </div>
                 </div>
                 <div class="d-flex align-items-center gap-3 mt-4">
                   <p class="fs-4 fw-bold"><i class="bi bi-eye"></i></p>
                   <p class="fs-4 fw-bold">${
-                    total_view ? total_view + "M" : "View Not Found"
+                    total_view ? total_view + "M" : "No data found."
                   }</p>
                 </div>
                 <div class="fs-4 fw-bold">
@@ -173,14 +173,15 @@ const displaySingleCategoryDetails = (singleDetails) => {
       <p class="card-text text-muted lh-lg my-3">${details}</p>
       <div class="d-flex flex-lg-row flex-md-row flex-sm-column flex-column justify-content-lg-between justify-content-md-between justify-content-sm-center justify-content-center align-items-center">
       <div>
-        <p><span class="fw-bold fs-6">Rating:</span> ${rating.number}, ${
-    rating.badge
-  }.</p>
+        <p><span class="fw-bold fs-6">Rating:</span> ${
+          rating.number ? rating.number : "No data found."
+        }, ${rating.badge ? rating.badge : "No data found."}.</p>
       </div>
       <div class="d-flex align-items-center gap-3">
         <p class="fs-4 fw-bold"><i class="bi bi-eye"></i></p>
         <p class="fw-bold">
-          ${total_view ? total_view : "View Not Found"}<span>M</span>
+          ${total_view ? total_view + "M" : "No data found."}
+          </p>
         </p>
       </div>
     </div>
@@ -190,10 +191,10 @@ const displaySingleCategoryDetails = (singleDetails) => {
       </div>
       <div>
         <h3 class="fw-bold fs-6 mb-1">${
-          author.name ? author.name : " Name Not Found"
+          author.name ? author.name : "No data found."
         }</h3>
         <p class="text-muted">${
-          author.published_date ? author.published_date : "Date Not Found"
+          author.published_date ? author.published_date : "No data found."
         }</p>
       </div>
       </div>
