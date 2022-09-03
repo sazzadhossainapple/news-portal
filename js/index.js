@@ -17,16 +17,13 @@ const displayAllCategory = (categorys) => {
     const li = document.createElement("li");
     li.classList.add("nav-item", "nav-list-items");
     li.innerHTML = `
-    
        <a  onclick="loadSingleCategory(${category.category_id})" class="nav-link active text-muted" >${category.category_name}</a>
-    
-   
     `;
     categoryAllList.appendChild(li);
   });
 };
 
-// single Category items
+// single Category News
 const loadSingleCategory = async (id) => {
   // strat spinner loader
   toggleSpinner(true);
@@ -42,20 +39,25 @@ const loadSingleCategory = async (id) => {
 };
 
 const displaySingleCategory = (singleCategorys) => {
+  console.log(singleCategorys);
   const numberOfCategory = document.getElementById("items-found");
   numberOfCategory.textContent = "";
+  const sortViewCategory = document.getElementById("sort-view-category");
   const spanCategoryNumber = document.createElement("span");
   spanCategoryNumber.classList.add("fs-6", "fw-semibold");
 
-  // number of category found or not
+  // number of News for category found or not.
   if (singleCategorys.length === 0) {
     numberOfCategory.classList.remove("d-none");
+    sortViewCategory.classList.add("d-none");
     spanCategoryNumber.innerText = `News not found for category 
     `;
+
     numberOfCategory.appendChild(spanCategoryNumber);
   } else {
     numberOfCategory.classList.remove("d-none");
-    spanCategoryNumber.innerText = `${singleCategorys.length} items found for category 
+    sortViewCategory.classList.remove("d-none");
+    spanCategoryNumber.innerText = `${singleCategorys.length} News found for category 
     `;
     numberOfCategory.appendChild(spanCategoryNumber);
   }
@@ -69,7 +71,6 @@ const displaySingleCategory = (singleCategorys) => {
   singleCategorys.forEach((singleCategory) => {
     const { thumbnail_url, title, details, author, total_view, _id } =
       singleCategory;
-    // console.log(typeof _id);
 
     const divSingleCategory = document.createElement("div");
     divSingleCategory.innerHTML = `

@@ -39,4 +39,7 @@
   .nav-list-items {
     margin-top: 10px;
   }
+  .nav-list-items a {
+    padding-left: 10px;
+  }
 }

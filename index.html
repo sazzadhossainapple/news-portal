@@ -55,7 +55,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <ul id="nav-link-active" class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item me-4">
                 <a
                   class="nav-link active text-primary fs-5"
@@ -129,21 +129,22 @@
 
         <!-- sort by view  -->
         <div
-          class="d-flex flex-column flex-lg-row flex-sm-column gap-3 justify-content-between"
+          id="sort-view-category"
+          class="d-flex flex-column flex-lg-row flex-sm-column gap-3 justify-content-between mb-5 d-none"
         >
           <div class="d-flex align-items-center">
-            <div><h3 class="fs-6 me-3">Sort By View:</h3></div>
+            <div>
+              <h3 class="fs-6 me-3">Sort By View:</h3>
+            </div>
             <div>
               <select class="form-select" aria-label="Default select example">
                 <option selected>Default</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
               </select>
             </div>
           </div>
-
-          <div>
+          <div
+            class="d-flex justify-content-lg-start justify-content-md-start justify-content-sm-between justify-content-between align-items-center mt-4 mt-sm-4 mt-lg-0 mt-md-0"
+          >
             <button type="button" class="btn btn-primary me-2">
               Today's Pick
             </button>
@@ -199,7 +200,7 @@
     <footer
       class="bg-white py-4 d-flex align-items-center justify-content-center fixed-bottom"
     >
-      <span class="text-center">Copyright 2022, The News Glory</span>
+      <span class="text-center text-muted">Copyright 2022, The News Glory</span>
     </footer>
 
     <!-- javascript file link -->
