@@ -66,7 +66,149 @@
       <!-- nan end -->
       <hr class="mx-lg-5 mx-md-3 mx-sm-2 mx-2" />
     </header>
-    <main class="container"></main>
+    <main class="container">
+      <section class="my-lg-5 my-sm-3 my-2">
+        <div
+          class="row row-cols-1 row-cols-md-2 mt-lg-5 mt-sm-3 mt-md-4 mt-2 g-4"
+        >
+          <div class="col">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title mb-4">
+                  Difference between var, let, and const.
+                </h5>
+                <p class="card-text">
+                  1.
+                  <span
+                    >The scope of a var variable is functional scope.The scope
+                    of a let variable is block scope.The scope of a const
+                    variable is block scope.</span
+                  >
+                </p>
+                <p class="card-text">
+                  2.
+                  <span>
+                    Var It can be accessed without initialization as its default
+                    value is "undefined". Let It cannot be accessed without
+                    initialization otherwise it will give 'referenceError'.
+                    Const It cannot be accessed without initialization, as it
+                    cannot be declared without initialization.</span
+                  >
+                </p>
+                <p class="card-text">
+                  3.
+                  <span
+                    >Var It can be declared without initialization. Let It can
+                    be declared without initialization. Const It cannot be
+                    declared without initialization.
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title mb-4">
+                  Difference between regular functions and arrow functions.
+                </h5>
+                <p class="card-text">
+                  1.
+                  <span>
+                    Regular functions created using function declarations or
+                    expressions are constructible and callable. Since regular
+                    functions are constructible, they can be called using the
+                    new keyword. However, the arrow functions are only callable
+                    and not constructible, i.e arrow functions can never be used
+                    as constructor functions. Hence, they can never be invoked
+                    with the new keyword.
+                  </span>
+                </p>
+                <p class="card-text">
+                  2.
+                  <span>
+                    Unlike regular functions, arrow functions do not have their
+                    own this. The value of this inside an arrow function remains
+                    the same throughout the lifecycle of the function and is
+                    always bound to the value of this in the closest non-arrow
+                    parent function.
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title mb-4">
+                  Difference between map, forEach.
+                </h5>
+                <p class="card-text">
+                  1.
+                  <span>
+                    The map() method creates an entirely new array.The forEach()
+                    method does not create a new array based on the given array.
+                  </span>
+                </p>
+                <p class="card-text">
+                  2.
+                  <span>
+                    The forEach() method returns "undefined" The map() method
+                    returns the newly created array according to the provided
+                    callback function.
+                  </span>
+                </p>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title mb-4">
+                  Difference between filter and find.
+                </h5>
+                <p class="card-text">
+                  1.
+                  <span>
+                    The filter() method is used to filters all the elements and
+                    returns the element that matches and the element that do not
+                    match are removed. The find() method is used to find all the
+                    descendant elements of the selected element. It finds the
+                    element in the DOM tree by traversing through the root to
+                    leaf.
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title mb-4">
+                  Why do we use template string in Javascript?
+                </h5>
+                <p class="card-text">
+                  1.
+                  <span
+                    >Template literals provide an easy way to interpolate
+                    variables and expressions into strings.
+                  </span>
+                </p>
+                <p class="card-text">
+                  2.
+                  <span
+                    >You will first run through the way strings with multiple
+                    lines were declared before ES6, then see how template
+                    literals make this easier. Originally, if you wanted to
+                    write a string that spans multiple lines in your text
+                    editor, you would use the concatenation operator. However,
+                    this was not always a straight-forward process. Then since
+                    es6 came, many lines of code can be written easily by using
+                    Backtick
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <!-- javascript file link -->
     <script
