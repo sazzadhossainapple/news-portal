@@ -55,12 +55,12 @@
                 <a
                   class="nav-link active text-primary fs-5"
                   aria-current="page"
-                  href="#"
+                  href="index.html"
                   >News</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link fs-5" href="#">Blog</a>
+                <a class="nav-link fs-5" href="blog.html">Blog</a>
               </li>
             </ul>
           </div>
@@ -72,19 +72,10 @@
     <main class="container">
       <!-- catagory list items start -->
       <section class="my-4">
-        <!-- <ul
-          id="category-list"
-          class="nav nav-pills d-flex justify-content-between"
-        >
-          <li class="nav-item nav-list-items">
-            <a class="nav-link active" aria-current="page">Home</a>
-          </li>
-        </ul> -->
-
         <nav class="navbar navbar-expand-lg">
           <div class="container-fluid">
             <button
-              class="navbar-toggler"
+              class="navbar-toggler mb-3"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#navbarNavDropdown"
@@ -95,10 +86,7 @@
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-              <ul
-                id="category-list"
-                class="nav nav-pills d-flex justify-content-between"
-              ></ul>
+              <ul id="category-list" class="navbar-nav d-flex gap-4"></ul>
             </div>
           </div>
         </nav>
@@ -122,20 +110,28 @@
         <div id="items-found" class="my-5 bg-white p-3 rounded-2 d-none"></div>
 
         <!-- sort by view  -->
-        <div class="d-flex justify-content-between">
-          <div class="d-flex">
-            <h3>Sort By View:</h3>
-            <select class="form-select" aria-label="Default select example">
-              <option selected>Default</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
-            </select>
+        <div
+          class="d-flex flex-column flex-lg-row flex-sm-column gap-3 justify-content-between"
+        >
+          <div class="d-flex align-items-center">
+            <div><h3 class="fs-6 me-3">Sort By View:</h3></div>
+            <div>
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Default</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
           </div>
 
           <div>
-            <button type="button" class="btn btn-primary">Primary</button>
-            <button type="button" class="btn btn-secondary">Primary</button>
+            <button type="button" class="btn btn-primary me-2">
+              Today's Pick
+            </button>
+            <button type="button" class="btn border-primary text-primary">
+              Trending
+            </button>
           </div>
         </div>
       </section>

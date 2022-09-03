@@ -6,6 +6,11 @@
 .nav-list-items {
   cursor: pointer;
 }
+.nav-list-items:hover a {
+  background-color: #0d6efd;
+  color: #ffffff !important;
+  border-radius: 5px;
+}
 
 /* author image css */
 .author-img {

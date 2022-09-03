@@ -14,15 +14,15 @@ const loadAllCategory = async () => {
 const displayAllCategory = (categorys) => {
   const categoryAllList = document.getElementById("category-list");
   categorys.forEach((category) => {
-    const div = document.createElement("div");
-    div.innerHTML = `
-    <li 
-      onclick="loadSingleCategory(${category.category_id})" class="nav-item nav-list-items ">
-       <a class="nav-link active" aria-current="page">${category.category_name}</a>
-    </li>
+    const li = document.createElement("li");
+    li.classList.add("nav-item", "nav-list-items");
+    li.innerHTML = `
+    
+       <a  onclick="loadSingleCategory(${category.category_id})" class="nav-link active fs-5 text-muted" aria-current="page">${category.category_name}</a>
+    
    
     `;
-    categoryAllList.appendChild(div);
+    categoryAllList.appendChild(li);
   });
 };
 
@@ -42,12 +42,22 @@ const loadSingleCategory = async (id) => {
 };
 
 const displaySingleCategory = (singleCategorys) => {
-  console.log(singleCategorys);
   const numberOfCategory = document.getElementById("items-found");
-  if (singleCategorys.length === null) {
-    numberOfCategory.classList.add("d-none");
+  numberOfCategory.textContent = "";
+  const spanCategoryNumber = document.createElement("span");
+  spanCategoryNumber.classList.add("fs-6", "fw-semibold");
+
+  // number of category found or not
+  if (singleCategorys.length === 0) {
+    numberOfCategory.classList.remove("d-none");
+    spanCategoryNumber.innerText = `items not found for category 
+    `;
+    numberOfCategory.appendChild(spanCategoryNumber);
   } else {
     numberOfCategory.classList.remove("d-none");
+    spanCategoryNumber.innerText = `${singleCategorys.length} items found for category 
+    `;
+    numberOfCategory.appendChild(spanCategoryNumber);
   }
   const singleCategoryInfo = document.getElementById("single-category-info");
   singleCategoryInfo.textContent = "";
@@ -74,8 +84,8 @@ const displaySingleCategory = (singleCategorys) => {
                 <p class="card-text text-muted lh-lg mb-3">${
                   details.length > 300 ? details.slice(0, 300) + "..." : details
                 }</p>
-                <div class="d-flex justify-content-between align-items-center flex-lg-row flex-sm-column flex-column">
-                <div class="d-flex gap-3">
+                <div class="d-flex align-items-center justify-content-between flex-lg-row flex-sm-column flex-column">
+                <div class="d-flex gap-3 mt-3">
                   <div>
                     <img class="rounded-circle author-img" src="${
                       author.img
@@ -92,20 +102,20 @@ const displaySingleCategory = (singleCategorys) => {
                     }</p>
                   </div>
                 </div>
-                <div class="d-flex align-items-center gap-3">
+                <div class="d-flex align-items-center gap-3 mt-4">
                   <p class="fs-4 fw-bold"><i class="bi bi-eye"></i></p>
                   <p class="fs-4 fw-bold">${
                     total_view ? total_view + "M" : "View Not Found"
                   }</p>
                 </div>
-                <div class="fs-4 fw-bold d-flex align-items-center">
+                <div class="fs-4 fw-bold">
                   <i class="bi bi-star-half"></i>
                   <i class="bi bi-star"></i>
                   <i class="bi bi-star"></i>
                   <i class="bi bi-star"></i>
                   <i class="bi bi-star"></i>
                 </div>
-                <div class="fs-1 fw-bold d-flex align-items-center">
+                <div class="fs-1 fw-bold">
                   <i onclick="loadSingleCategoryDetails('${_id}')" class="bi bi-arrow-right-short btn-icon" data-bs-toggle="modal"
                   data-bs-target="#categoryDetailsModal"></i>
                 </div>
