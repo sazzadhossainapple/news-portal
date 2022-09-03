@@ -18,7 +18,7 @@ const displayAllCategory = (categorys) => {
     li.classList.add("nav-item", "nav-list-items");
     li.innerHTML = `
     
-       <a  onclick="loadSingleCategory(${category.category_id})" class="nav-link active fs-5 text-muted" aria-current="page">${category.category_name}</a>
+       <a  onclick="loadSingleCategory(${category.category_id})" class="nav-link active text-muted" >${category.category_name}</a>
     
    
     `;
@@ -76,7 +76,7 @@ const displaySingleCategory = (singleCategorys) => {
     <div class="card mb-3 p-3">
           <div class="row g-0">
             <div class="col-md-3">
-              <img src="${thumbnail_url}" class="img-fluid rounded-start" alt="..." />
+              <img src="${thumbnail_url}" class="img-fluid rounded-start img-singleCategory" alt="..." />
             </div>
             <div class="col-md-9">
               <div class="card-body">
@@ -115,8 +115,8 @@ const displaySingleCategory = (singleCategorys) => {
                   <i class="bi bi-star"></i>
                   <i class="bi bi-star"></i>
                 </div>
-                <div class="fs-1 fw-bold">
-                  <i onclick="loadSingleCategoryDetails('${_id}')" class="bi bi-arrow-right-short btn-icon" data-bs-toggle="modal"
+                <div class="fs-3 mt-3 mt-lg-0 mt-md-0 mt-sm-3 fw-bold">
+                  <i onclick="loadSingleCategoryDetails('${_id}')" class="bi bi-arrow-right-short btn-icon rounded" data-bs-toggle="modal"
                   data-bs-target="#categoryDetailsModal"></i>
                 </div>
               </div>
@@ -171,7 +171,7 @@ const displaySingleCategoryDetails = (singleDetails) => {
     <img class="img-fluid" src="${image_url}" alt="">
       <div>
       <p class="card-text text-muted lh-lg my-3">${details}</p>
-      <div class="d-flex justify-content-between align-items-center">
+      <div class="d-flex flex-lg-row flex-md-row flex-sm-column flex-column justify-content-lg-between justify-content-md-between justify-content-sm-center justify-content-center align-items-center">
       <div>
         <p><span class="fw-bold fs-6">Rating:</span> ${rating.number}, ${
     rating.badge
@@ -184,7 +184,7 @@ const displaySingleCategoryDetails = (singleDetails) => {
         </p>
       </div>
     </div>
-    <div class="d-flex gap-3 justify-content-center">
+    <div class="d-flex gap-3 justify-content-lg-start justify-content-md-start justify-content-sm-center justify-content-center">
       <div>
         <img class="rounded-circle author-img" src="${author.img}" alt="" />
       </div>

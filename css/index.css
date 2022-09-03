@@ -5,6 +5,10 @@
 /* category items css */
 .nav-list-items {
   cursor: pointer;
+  padding: 2px 5px !important;
+}
+.nav-list-items a {
+  font-size: 18px;
 }
 .nav-list-items:hover a {
   background-color: #0d6efd;
@@ -19,4 +23,18 @@
 }
 .btn-icon {
   cursor: pointer;
+  border: 1px solid #0d6efd;
+  padding: 2px 20px !important;
+  background-color: #0d6efd;
+  color: #ffffff;
+}
+
+/* mobile responsive */
+@media only screen and (max-width: 768px) {
+  .img-singleCategory {
+    width: 100%;
+  }
+  .nav-list-items {
+    margin-top: 10px;
+  }
 }

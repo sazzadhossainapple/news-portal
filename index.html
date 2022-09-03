@@ -83,11 +83,11 @@
     </header>
     <main class="container">
       <!-- catagory list items start -->
-      <section class="my-4">
+      <section class="my-lg-4 my-md-3 my-sm-1 my-1">
         <nav class="navbar navbar-expand-lg">
           <div class="container-fluid">
             <button
-              class="navbar-toggler mb-3"
+              class="navbar-toggler"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#navbarNavDropdown"
@@ -98,7 +98,10 @@
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-              <ul id="category-list" class="navbar-nav d-flex gap-4"></ul>
+              <ul
+                id="category-list"
+                class="navbar-nav d-flex gap-2 gap-lg-4 gap-sm-3 g-md-4"
+              ></ul>
             </div>
           </div>
         </nav>
@@ -119,7 +122,10 @@
 
       <section>
         <!-- number of items  -->
-        <div id="items-found" class="my-5 bg-white p-3 rounded-2 d-none"></div>
+        <div
+          id="items-found"
+          class="my-lg-5 my-md-4 my-sm-4 my-4 bg-white p-3 rounded-2 d-none"
+        ></div>
 
         <!-- sort by view  -->
         <div
@@ -165,9 +171,7 @@
           <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="categoryDetailsModalLabel">
-                  Modal title
-                </h5>
+                <h5 class="modal-title" id="categoryDetailsModalLabel"></h5>
                 <button
                   type="button"
                   class="btn-close"
@@ -179,7 +183,7 @@
               <div class="modal-footer">
                 <button
                   type="button"
-                  class="btn btn-secondary"
+                  class="btn btn-primary"
                   data-bs-dismiss="modal"
                 >
                   Close
